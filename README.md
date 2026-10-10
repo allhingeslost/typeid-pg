@@ -1,12 +1,12 @@
-# TypeId Pg
+# TypeID Pg
 
 ## An Implementation of TypeId for PostgreSQL
 
-TypeId is a type-safe, globally unique identifier format inspired by Stripe's IDs, designed to be sortable, unique and type-safe.
+TypeID is a type-safe, globally unique identifier format inspired by Stripe's IDs, designed to be sortable, unique and type-safe.
 
-This implementation of TypeId does some modification to the base TypeId specification by replacing the random UUID part of the TypeId in favor of a sortable ULID
+This implementation of TypeId does some modification to the base TypeID specification by replacing the random UUID part of the TypeId in favor of a sortable ULID
 
-This implement of TypeId consists of two parts a `Type` prefix and a `ULID` suffix, separated by an underscore.
+This implement of TypeID consists of two parts a `Type` prefix and a `ULID` suffix, separated by an underscore.
 
 - ```pseudo
   user_01hxyg96mv7ws0e2kw4zcgp3kz
@@ -19,13 +19,13 @@ This implement of TypeId consists of two parts a `Type` prefix and a `ULID` suff
 - **ULID Suffix**
   - Following the underscore is a 26-character string that represents a ULID. This part ensures the TypeId's global uniqueness and this also makes TypeId's sortable.
 
-This implementations TypeId offers a modern and efficient way to handle globally unique identifiers in a type-safe manner, with enhanced sorting capabilities.
+This implementations TypeID offers a modern and efficient way to handle globally unique identifiers in a type-safe manner, with enhanced sorting capabilities.
 
-## Usage of TypeId Pg
+## Usage of TypeID Pg
 
 Once you've installed the TypeID types and functions from `typeid.sql` in your Postgres instance, you can use it as follows.
 
-- Generating TypeId
+- Generating TypeID
 
 ```sql
 -- Generate a TypeId
@@ -33,7 +33,7 @@ SELECT gen_typeid('user')
 -- Result: user_01hxyg96mv7ws0e2kw4zcgp3kz 
 ```
 
-- Validating TypeId
+- Validating TypeID
 
 ```sql
 -- If TypeId is valid
@@ -45,7 +45,7 @@ SELECT check_typeid('01hxyg96mv7ws0e2kw4zcgp3kz', 'user')
 -- Result: false
 ```
 
-- Defining TypeId
+- Defining TypeID
 
 ```sql
 -- Creating a users table with TypeId of type `user` as primary key
